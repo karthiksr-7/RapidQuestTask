@@ -12,29 +12,32 @@
 
 body {
   background-color: #e5ddd5;
-  height: 100%;
-  width: 100%;
+  margin: 0; /* No margin */
+  padding: 0; /* No padding */
+  height: 100%; /* Full height */
+  width: 100%; /* Full width */
 }
 
 /* Layout Container */
 .home {
   display: flex;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  overflow: hidden; /* No overflow */
 }
 
 /* ============================= */
 /* 📂 SIDEBAR / CHAT LIST         */
 /* ============================= */
 .sidebar {
-  width: 30%;
+  width: 30%; /* Sidebar takes up 30% of the screen */
   min-width: 280px;
   background-color: #ffffff;
   border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
+  height: 100vh; /* Full height */
 }
 
 .sidebar.full-width {
@@ -64,8 +67,8 @@ body {
   display: flex;
   flex-direction: column;
   transition: background-color 0.2s ease;
-  margin-bottom: 12px;
-  border-radius: 8px;
+  margin-bottom: 12px; /* Space between each chat item */
+  border-radius: 8px; /* Rounded corners for items */
 }
 
 .chat-list-item:hover {
@@ -73,7 +76,7 @@ body {
 }
 
 .chat-list-item.active {
-  background-color: #d9fdd3;
+  background-color: #d9fdd3; /* Green background for active chat */
 }
 
 /* Top row: name + time */
@@ -81,7 +84,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 6px;
+  margin-bottom: 6px; /* Added margin between name and time */
 }
 
 .chat-name {
@@ -93,7 +96,7 @@ body {
 .chat-time {
   font-size: 0.75rem;
   color: #667781;
-  margin-left: 10px;
+  margin-left: 10px; /* Slight left margin for the time */
 }
 
 /* Last message preview */
@@ -136,9 +139,18 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  
+  background-repeat: repeat;
   background-color: #efeae2;
+  background-size: auto;
+  height: 100vh; /* Full height */
 }
 
+.chat-window.hidden {
+  display: none;
+}
+
+/* Chat Header */
 .chat-header {
   display: flex;
   align-items: center;
@@ -240,4 +252,45 @@ body {
   font-style: italic;
   font-size: 16px;
   text-align: center;
+}
+
+/* ============================= */
+/* 📱 MOBILE RESPONSIVE          */
+/* ============================= */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    margin: 0; /* No margin */
+    padding: 0; /* No padding */
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    height: 35vh;
+    border-right: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .chat-window {
+    height: 65vh;
+  }
+
+  .chat-item {
+    padding: 10px 12px;
+  }
+
+  .chat-name {
+    font-size: 0.95rem;
+  }
+
+  .chat-time {
+    font-size: 0.7rem;
+  }
+
+  .chat-preview {
+    font-size: 0.8rem;
+  }
 }
