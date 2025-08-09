@@ -65,23 +65,3 @@
   cursor: pointer;
   color: #008069;
 }
-
-/* ============================= */
-/* 📱 MOBILE RESPONSIVE          */
-/* ============================= */
-@media (max-width: 768px) {
-  .message-input {
-    padding: 10px 12px;
-    gap: 10px;
-  }
-
-  .message-input input {
-    font-size: 13px;
-    padding: 10px 14px;
-  }
-
-  .message-input button {
-    padding: 9px 12px;
-    font-size: 15px;
-  }
-}
