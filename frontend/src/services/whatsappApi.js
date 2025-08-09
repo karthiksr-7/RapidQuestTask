@@ -1,7 +1,8 @@
 // src/services/whatsappApi.js
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:5000/api'; // Update this when deployed
+const BASE_URL = 'https://mychatapp-backend.onrender.com/api';
+
 
 export const fetchAllMessages = async () => {
   try {
