@@ -66,23 +66,3 @@
 .status.read {
   color: #4fc3f7;
 }
-
-/* MEDIA QUERY: Mobile Responsive */
-@media screen and (max-width: 768px) {
-  .message-bubble {
-    max-width: 95%;
-    font-size: 14px;
-  }
-
-  .message-text {
-    font-size: 14px;
-  }
-
-  .message-meta {
-    font-size: 10px;
-  }
-
-  .status {
-    font-size: 11px;
-  }
-}
