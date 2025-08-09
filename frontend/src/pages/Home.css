@@ -1,5 +1,5 @@
 /* ============================= */
-/* 📜 WHATSAPP CHAT UI (MERGED)  */
+/* 📜 WHATSAPP CHAT UI (DESKTOP ONLY) */
 /* ============================= */
 
 /* Reset defaults */
@@ -12,8 +12,6 @@
 
 body {
   background-color: #e5ddd5;
-  margin: 0;
-  padding: 0;
   height: 100%;
 }
 
@@ -23,8 +21,6 @@ body {
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
 }
 
 /* ============================= */
@@ -38,14 +34,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  transition: all 0.3s ease;
-}
-
-/* Full-width chat list (mobile view or no chat selected) */
-.sidebar.full-width {
-  width: 100%;
-  min-width: unset;
-  border-right: none;
 }
 
 /* Sidebar Header */
@@ -138,16 +126,9 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-repeat: repeat;
   background-color: #efeae2;
-  background-size: auto;
 }
 
-.chat-window.hidden {
-  display: none;
-}
-
-/* Chat Header */
 .chat-header {
   display: flex;
   align-items: center;
