@@ -15,10 +15,15 @@ connectDB();
 
 const app = express();
 const server = http.createServer(app);
+
+// Initialize Socket.io with CORS options
 const io = socketIO(server, {
   cors: {
-    origin: '*',
+    // Replace with your actual frontend URL in production
+    origin: 'https://yourfrontenddomain.com',  // Or '*' for open access during development
     methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+    credentials: true,
   },
 });
 
@@ -26,25 +31,16 @@ const io = socketIO(server, {
 app.use(cors());
 app.use(express.json());
 
-// ✅ Root route for Render
+// ✅ Root route for Render or checking if backend is alive
 app.get('/', (req, res) => {
   res.send('Backend is running 🚀');
 });
 
-// Routes
+// Routes for handling messages
 const messageRoutes = require('./routes/messageRoutes')(io);
 app.use('/api/messages', messageRoutes);
 
-// 🔄 Socket.io connection
-io.on('connection', (socket) => {
-  console.log('🟢 New client connected');
-
-  socket.on('disconnect', () => {
-    console.log('🔴 Client disconnected');
-  });
-});
-
-// 🔍 Real-time MongoDB Change Stream for status updates
+// 🔄 Real-time MongoDB Change Stream for status updates
 mongoose.connection.once('open', () => {
   console.log('✅ MongoDB connected. Listening for changes...');
 
@@ -67,6 +63,19 @@ mongoose.connection.once('open', () => {
         });
       }
     }
+  });
+});
+
+// 🔄 Socket.io connection
+io.on('connection', (socket) => {
+  console.log('🟢 New client connected');
+
+  socket.on('disconnect', () => {
+    console.log('🔴 Client disconnected');
+  });
+
+  socket.on('error', (err) => {
+    console.error('Socket.io error:', err);
   });
 });
 
