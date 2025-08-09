@@ -1,4 +1,4 @@
-make it responsive for all devices /* ============================= */
+/* ============================= */
 /* 📜 WHATSAPP CHAT UI (MERGED)  */
 /* ============================= */
 
@@ -249,47 +249,4 @@ body {
   font-style: italic;
   font-size: 16px;
   text-align: center;
-}
-
-/* ============================= */
-/* 📱 MOBILE RESPONSIVE          */
-/* ============================= */
-@media (max-width: 768px) {
-  .home {
-    flex-direction: column;
-    overflow: visible; /* allow scroll */
-  }
-
-  .sidebar {
-    width: 100%;
-    height: auto;
-    max-height: 50vh; /* Allow scroll if too long */
-    overflow-y: auto;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-  }
-
-  .sidebar.full-width {
-    width: 100%;
-  }
-
-  .chat-window {
-    height: auto;
-    flex: 1;
-  }
-
-  .sidebar-header,
-  .chat-header {
-    height: 50px;
-    padding: 10px 14px;
-  }
-
-  .messages {
-    padding: 10px;
-  }
-
-  .message-bubble {
-    max-width: 85%;
-    font-size: 13px;
-  }
 }
