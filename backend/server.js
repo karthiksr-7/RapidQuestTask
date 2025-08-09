@@ -18,7 +18,7 @@ const server = http.createServer(app);
 
 // CORS setup to allow requests from your frontend domain
 const corsOptions = {
-  origin: 'https://rapidquesttask-1.onrender.com',  // Allow this origin
+  origin: 'https://rapidquesttask.onrender.com',  // Allow this origin
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
   credentials: true,  // Allow credentials (cookies, etc.)
