@@ -35,11 +35,11 @@ body {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  height: 100vh;
 }
 
 .sidebar.full-width {
   width: 100%;
+  min-width: unset;
   border-right: none;
 }
 
@@ -136,16 +136,9 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  background-repeat: repeat;
   background-color: #efeae2;
-  height: 100vh;
 }
 
-.chat-window.hidden {
-  display: none;
-}
-
-/* Chat Header */
 .chat-header {
   display: flex;
   align-items: center;
@@ -250,26 +243,32 @@ body {
 }
 
 /* ============================= */
-/* 📱 MOBILE RESPONSIVE (UPDATED) */
+/* 📱 MOBILE RESPONSIVE          */
 /* ============================= */
 @media (max-width: 768px) {
   .home {
     flex-direction: column;
   }
 
+  /* Sidebar always visible on top */
   .sidebar {
     width: 100%;
-    height: 100vh;
+    min-width: unset;
+    height: auto;
+    max-height: 50vh;
     border-right: none;
+    border-bottom: 1px solid #ddd;
   }
 
+  /* Chat window below sidebar */
   .chat-window {
     width: 100%;
-    height: 100vh;
+    height: 50vh;
   }
 
+  /* Prevent hiding */
   .mobile-hide {
-    display: none !important;
+    display: block !important;
   }
 
   .chat-name {
