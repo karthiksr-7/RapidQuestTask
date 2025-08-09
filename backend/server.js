@@ -18,7 +18,7 @@ const server = http.createServer(app);
 
 // CORS setup to allow requests from your frontend domain
 const corsOptions = {
-  origin: 'https://rapidquesttask.onrender.com',  // Allow this origin
+  origin: 'https://rapidquesttask-1.onrender.com',  // Allow this frontend URL
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type'],
   credentials: true,  // Allow credentials (cookies, etc.)
@@ -26,14 +26,18 @@ const corsOptions = {
 
 // Initialize Socket.io with CORS options
 const io = socketIO(server, {
-  cors: corsOptions,
+  cors: {
+    origin: 'https://rapidquesttask-1.onrender.com',  // Allow this frontend URL
+    methods: ['GET', 'POST'],
+    credentials: true,
+  }
 });
 
 // Middleware
 app.use(cors(corsOptions));  // Apply CORS middleware globally
 app.use(express.json());
 
-// ✅ Root route for Render or checking if backend is alive
+// ✅ Root route for Render
 app.get('/', (req, res) => {
   res.send('Backend is running 🚀');
 });
@@ -74,10 +78,6 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('🔴 Client disconnected');
-  });
-
-  socket.on('error', (err) => {
-    console.error('Socket.io error:', err);
   });
 });
 
