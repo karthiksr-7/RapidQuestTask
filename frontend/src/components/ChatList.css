@@ -12,37 +12,34 @@
 
 body {
   background-color: #e5ddd5;
-  margin: 0; /* No margin */
-  padding: 0; /* No padding */
-  height: 100%; /* Full height */
-  width: 100%; /* Full width */
+  height: 100%;
+  width: 100%;
 }
 
 /* Layout Container */
 .home {
   display: flex;
-  height: 100vh; /* Full height of the viewport */
-  width: 100vw; /* Full width of the viewport */
-  overflow: hidden; /* No overflow */
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
 /* ============================= */
 /* 📂 SIDEBAR / CHAT LIST         */
 /* ============================= */
 .sidebar {
-  width: 30%; /* Sidebar takes up 30% of the screen */
+  width: 30%;
   min-width: 280px;
   background-color: #ffffff;
   border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  height: 100vh; /* Full height */
+  height: 100vh;
 }
 
 .sidebar.full-width {
   width: 100%;
-  min-width: unset;
   border-right: none;
 }
 
@@ -67,8 +64,8 @@ body {
   display: flex;
   flex-direction: column;
   transition: background-color 0.2s ease;
-  margin-bottom: 12px; /* Space between each chat item */
-  border-radius: 8px; /* Rounded corners for items */
+  margin-bottom: 12px;
+  border-radius: 8px;
 }
 
 .chat-list-item:hover {
@@ -76,7 +73,7 @@ body {
 }
 
 .chat-list-item.active {
-  background-color: #d9fdd3; /* Green background for active chat */
+  background-color: #d9fdd3;
 }
 
 /* Top row: name + time */
@@ -84,7 +81,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 6px; /* Added margin between name and time */
+  margin-bottom: 6px;
 }
 
 .chat-name {
@@ -96,7 +93,7 @@ body {
 .chat-time {
   font-size: 0.75rem;
   color: #667781;
-  margin-left: 10px; /* Slight left margin for the time */
+  margin-left: 10px;
 }
 
 /* Last message preview */
@@ -139,11 +136,9 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  
   background-repeat: repeat;
   background-color: #efeae2;
-  background-size: auto;
-  height: 100vh; /* Full height */
+  height: 100vh;
 }
 
 .chat-window.hidden {
@@ -253,39 +248,30 @@ body {
   font-size: 16px;
   text-align: center;
 }
+
 /* ============================= */
 /* 📱 MOBILE RESPONSIVE (UPDATED) */
 /* ============================= */
 @media (max-width: 768px) {
   .home {
     flex-direction: column;
-    height: 100vh;
-    width: 100%;
   }
 
-  /* Sidebar takes full width when visible */
   .sidebar {
     width: 100%;
-    min-width: unset;
     height: 100vh;
     border-right: none;
-    border-bottom: none;
-    transition: transform 0.3s ease;
   }
 
-  /* Chat window takes full width when visible */
   .chat-window {
     width: 100%;
     height: 100vh;
-    transition: transform 0.3s ease;
   }
 
-  /* Hide chat window when viewing sidebar */
   .mobile-hide {
     display: none !important;
   }
 
-  /* Adjust chat item sizes for smaller screens */
   .chat-name {
     font-size: 0.95rem;
   }
