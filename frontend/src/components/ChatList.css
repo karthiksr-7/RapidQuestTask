@@ -253,35 +253,39 @@ body {
   font-size: 16px;
   text-align: center;
 }
-
 /* ============================= */
-/* 📱 MOBILE RESPONSIVE          */
+/* 📱 MOBILE RESPONSIVE (UPDATED) */
 /* ============================= */
 @media (max-width: 768px) {
   .home {
     flex-direction: column;
     height: 100vh;
     width: 100%;
-    margin: 0; /* No margin */
-    padding: 0; /* No padding */
   }
 
+  /* Sidebar takes full width when visible */
   .sidebar {
     width: 100%;
     min-width: unset;
-    height: 35vh;
+    height: 100vh;
     border-right: none;
-    border-bottom: 1px solid #ddd;
+    border-bottom: none;
+    transition: transform 0.3s ease;
   }
 
+  /* Chat window takes full width when visible */
   .chat-window {
-    height: 65vh;
+    width: 100%;
+    height: 100vh;
+    transition: transform 0.3s ease;
   }
 
-  .chat-item {
-    padding: 10px 12px;
+  /* Hide chat window when viewing sidebar */
+  .mobile-hide {
+    display: none !important;
   }
 
+  /* Adjust chat item sizes for smaller screens */
   .chat-name {
     font-size: 0.95rem;
   }
