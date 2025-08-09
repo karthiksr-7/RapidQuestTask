@@ -26,6 +26,11 @@ const io = socketIO(server, {
 app.use(cors());
 app.use(express.json());
 
+// ✅ Root route for Render
+app.get('/', (req, res) => {
+  res.send('Backend is running 🚀');
+});
+
 // Routes
 const messageRoutes = require('./routes/messageRoutes')(io);
 app.use('/api/messages', messageRoutes);
@@ -68,5 +73,5 @@ mongoose.connection.once('open', () => {
 // Start server
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on port ${PORT}`);
 });
