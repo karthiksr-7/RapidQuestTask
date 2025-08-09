@@ -1,7 +1,7 @@
 // src/services/whatsappApi.js
 import axios from 'axios';
 
-const BASE_URL = 'https://mychatapp-backend.onrender.com/api';
+const BASE_URL = 'https://rapidquesttask.onrender.com/api';
 
 
 export const fetchAllMessages = async () => {
