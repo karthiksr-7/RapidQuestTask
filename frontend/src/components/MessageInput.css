@@ -1,0 +1,87 @@
+/* ============================= */
+/* 📄 MESSAGE INPUT STYLES        */
+/* ============================= */
+.message-input {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #f0f2f5;
+  border-top: 1px solid #ccc;
+  gap: 12px;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  border-radius: 20px; /* Rounded corners */
+}
+
+.message-input input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: white;
+  font-size: 14px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  transition: all 0.3s ease;
+}
+
+.message-input input:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Focus effect for input */
+  border-color: #008069; /* WhatsApp Green color on focus */
+}
+
+.message-input button {
+  padding: 12px 16px;
+  background-color: #008069; /* WhatsApp send button color */
+  border: none;
+  color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+.message-input button:hover {
+  background-color: #075e54; /* WhatsApp Green on hover */
+}
+
+/* Clear icon (optional) inside the input field */
+.message-input input:valid {
+  padding-right: 40px; /* Space for the clear button */
+}
+
+.message-input .clear-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  cursor: pointer;
+  color: #008069;
+}
+
+/* ============================= */
+/* 📱 MOBILE RESPONSIVE          */
+/* ============================= */
+@media (max-width: 768px) {
+  .message-input {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .message-input input {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+
+  .message-input button {
+    padding: 9px 12px;
+    font-size: 15px;
+  }
+}
