@@ -7,7 +7,7 @@ import { fetchAllMessages, sendMessage } from '../services/whatsappApi';
 import './Home.css';
 
 const YOUR_NUMBER = '918329446654';
-const SOCKET_SERVER_URL = 'http://localhost:5000';
+const SOCKET_SERVER_URL = 'https://mychatapp-backend.onrender.com';
 
 const generateMessageId = () => {
   const timestamp = Date.now();
