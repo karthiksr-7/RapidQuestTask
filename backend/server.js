@@ -16,19 +16,21 @@ connectDB();
 const app = express();
 const server = http.createServer(app);
 
+// CORS setup to allow requests from your frontend domain
+const corsOptions = {
+  origin: 'https://rapidquesttask-1.onrender.com',  // Allow this origin
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type'],
+  credentials: true,  // Allow credentials (cookies, etc.)
+};
+
 // Initialize Socket.io with CORS options
 const io = socketIO(server, {
-  cors: {
-    // Replace with your actual frontend URL in production
-    origin: 'https://yourfrontenddomain.com',  // Or '*' for open access during development
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type'],
-    credentials: true,
-  },
+  cors: corsOptions,
 });
 
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));  // Apply CORS middleware globally
 app.use(express.json());
 
 // ✅ Root route for Render or checking if backend is alive
